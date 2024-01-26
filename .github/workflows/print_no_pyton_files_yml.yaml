@@ -1,13 +1,12 @@
-name: get the count of python files
 
-on: push
-
+name: Print Pi Workflow
+on:
+  push:
+    branches: [ "master" ]
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  print-pi-job:
+    runs-on: macos-latest
     steps:
-      - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content
-
-      - name: execute python script # run main.py
-        run: python count_ipynb_file.py
+      - name: Print Pi Step
+        run: |
+          echo pi=`echo "4*a(1)" | bc -l`
