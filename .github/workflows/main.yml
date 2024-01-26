@@ -1,0 +1,11 @@
+name: Print Pi Workflow
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  print-pi-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Pi Step
+        run: |
+          echo pi=`echo "4*a(1)" | bc -l`
